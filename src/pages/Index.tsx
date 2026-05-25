@@ -38,6 +38,7 @@ const services = [
 const aboutImage = "https://cdn.poehali.dev/projects/1b096a44-0c81-4524-82a9-090523ac4c74/bucket/85b0535e-ca79-49bd-b958-70ecacfc11f8.png";
 
 const portfolioImages = [
+  "https://cdn.poehali.dev/projects/d1f29c46-c17d-48bd-954d-de2b0beb2c4a/bucket/b9957893-c4bc-414e-9a36-3c0540ba7673.JPG",
   "https://cdn.poehali.dev/projects/d1f29c46-c17d-48bd-954d-de2b0beb2c4a/bucket/5b43f160-495f-4836-82f5-08109ed7c4da.JPG",
   "https://cdn.poehali.dev/projects/1b096a44-0c81-4524-82a9-090523ac4c74/bucket/6bd233cf-4646-4f3e-8325-92299487afe1.JPG",
   "https://cdn.poehali.dev/projects/1b096a44-0c81-4524-82a9-090523ac4c74/bucket/4cd2d055-04b8-42ad-9fbb-f421641e81af.JPG",
