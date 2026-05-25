@@ -149,7 +149,8 @@ const Index = () => {
                     {s.name}
                   </h3>
                   <Icon
-                    name={s.highlight ? "Star" : "Sparkles"}
+                    name={s.highlight ? "Star" : "Gem"}
+                    fallback="Star"
                     size={16}
                     className={s.highlight ? "text-white/70 flex-shrink-0 mt-0.5" : "text-primary flex-shrink-0 mt-0.5"}
                   />
