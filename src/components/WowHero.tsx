@@ -170,24 +170,7 @@ const WowHero = ({ images }: WowHeroProps) => {
         </div>
       </section>
 
-      {/* ═══ STATS ═══ */}
-      <div
-        className="bg-white/90 backdrop-blur border-y border-border/40 py-5 sm:py-6 px-4 opacity-0"
-        style={{ animation: fadeIn('1.3s') }}
-      >
-        <div className="max-w-2xl mx-auto grid grid-cols-3 gap-2 sm:gap-6 text-center">
-          {[
-            { num: '5+',   label: 'лет опыта'           },
-            { num: '500+', label: 'довольных клиенток'   },
-            { num: '100%', label: 'стойкий результат'    },
-          ].map((s) => (
-            <div key={s.label}>
-              <p className="font-display text-xl sm:text-3xl font-semibold text-primary">{s.num}</p>
-              <p className="text-[10px] sm:text-xs text-muted-foreground mt-0.5 leading-snug">{s.label}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+
 
     </div>
   );
