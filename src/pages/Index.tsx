@@ -35,12 +35,13 @@ const services = [
   },
 ];
 
+const aboutImage = "https://cdn.poehali.dev/projects/1b096a44-0c81-4524-82a9-090523ac4c74/bucket/85b0535e-ca79-49bd-b958-70ecacfc11f8.png";
+
 const portfolioImages = [
   "https://cdn.poehali.dev/projects/d1f29c46-c17d-48bd-954d-de2b0beb2c4a/bucket/5b43f160-495f-4836-82f5-08109ed7c4da.JPG",
   "https://cdn.poehali.dev/projects/1b096a44-0c81-4524-82a9-090523ac4c74/bucket/6bd233cf-4646-4f3e-8325-92299487afe1.JPG",
   "https://cdn.poehali.dev/projects/1b096a44-0c81-4524-82a9-090523ac4c74/bucket/4cd2d055-04b8-42ad-9fbb-f421641e81af.JPG",
   "https://cdn.poehali.dev/projects/1b096a44-0c81-4524-82a9-090523ac4c74/bucket/ccf64f94-cf4e-439f-b076-9462f639a342.JPG",
-  "https://cdn.poehali.dev/projects/1b096a44-0c81-4524-82a9-090523ac4c74/bucket/85b0535e-ca79-49bd-b958-70ecacfc11f8.png",
 ];
 
 const Index = () => {
@@ -56,7 +57,7 @@ const Index = () => {
           <div className="relative">
             <div className="absolute inset-0 rounded-3xl bg-primary/10 translate-x-3 translate-y-3" />
             <img
-              src="https://cdn.poehali.dev/projects/1b096a44-0c81-4524-82a9-090523ac4c74/bucket/85b0535e-ca79-49bd-b958-70ecacfc11f8.png"
+              src={aboutImage}
               alt="Александра — визажист"
               className="relative rounded-3xl w-full object-cover aspect-[3/4] shadow-xl"
               loading="lazy"
