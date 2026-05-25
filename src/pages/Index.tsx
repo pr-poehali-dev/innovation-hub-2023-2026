@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Icon from "@/components/ui/icon";
 import WowHero from "@/components/WowHero";
 
@@ -46,6 +47,8 @@ const portfolioImages = [
 ];
 
 const Index = () => {
+  const [selected, setSelected] = useState<string | null>("Свадебный");
+
   return (
     <main className="relative min-h-screen bg-background">
 
@@ -90,34 +93,50 @@ const Index = () => {
           <p className="text-xs tracking-[0.2em] uppercase text-primary font-medium text-center mb-2">Стоимость</p>
           <h2 className="font-display text-4xl font-light text-foreground text-center mb-10">Прайс-лист</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {services.map((s) => (
-              <div
-                key={s.name}
-                className={`rounded-2xl p-5 flex flex-col gap-2 transition-shadow hover:shadow-md ${
-                  s.highlight
-                    ? "bg-primary text-white shadow-lg"
-                    : "bg-white border border-border"
-                }`}
-              >
-                <div className="flex items-start justify-between gap-2">
-                  <h3 className={`font-semibold text-base ${s.highlight ? "text-white" : "text-foreground"}`}>
-                    {s.name}
-                  </h3>
-                  <Icon
-                    name={s.highlight ? "Star" : "Gem"}
-                    fallback="Star"
-                    size={16}
-                    className={s.highlight ? "text-white/70 flex-shrink-0 mt-0.5" : "text-primary flex-shrink-0 mt-0.5"}
-                  />
+            {services.map((s) => {
+              const isActive = selected === s.name;
+              return (
+                <div
+                  key={s.name}
+                  onClick={() => setSelected(isActive ? null : s.name)}
+                  className={`rounded-2xl p-5 flex flex-col gap-2 cursor-pointer transition-all duration-300 select-none ${
+                    isActive
+                      ? "bg-primary text-white shadow-xl scale-[1.02] ring-2 ring-primary/40"
+                      : "bg-white border border-border hover:shadow-md hover:border-primary/30"
+                  }`}
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <h3 className={`font-semibold text-base ${isActive ? "text-white" : "text-foreground"}`}>
+                      {s.name}
+                    </h3>
+                    <Icon
+                      name={isActive ? "Star" : "Gem"}
+                      fallback="Star"
+                      size={16}
+                      className={isActive ? "text-white/70 flex-shrink-0 mt-0.5" : "text-primary flex-shrink-0 mt-0.5"}
+                    />
+                  </div>
+                  <p className={`text-sm leading-relaxed flex-1 ${isActive ? "text-white/80" : "text-muted-foreground"}`}>
+                    {s.desc}
+                  </p>
+                  <div className="flex items-center justify-between mt-1">
+                    <p className={`text-xl font-bold ${isActive ? "text-white" : "text-primary"}`}>
+                      {s.price}
+                    </p>
+                    {isActive && (
+                      <a
+                        href="tel:+79881388714"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-1.5 text-xs text-white/90 bg-white/20 hover:bg-white/30 px-3 py-1.5 rounded-full transition-all"
+                      >
+                        <Icon name="Phone" size={11} />
+                        Записаться
+                      </a>
+                    )}
+                  </div>
                 </div>
-                <p className={`text-sm leading-relaxed flex-1 ${s.highlight ? "text-white/80" : "text-muted-foreground"}`}>
-                  {s.desc}
-                </p>
-                <p className={`text-xl font-bold mt-1 ${s.highlight ? "text-white" : "text-primary"}`}>
-                  {s.price}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
