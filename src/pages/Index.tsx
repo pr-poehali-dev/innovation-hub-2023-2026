@@ -1,34 +1,214 @@
 import ArcGalleryHero from "@/components/ArcGalleryHero";
+import Icon from "@/components/ui/icon";
+
+const services = [
+  {
+    name: "Дневной",
+    desc: "Лёгкий свежий образ с акцентом на естественную красоту",
+    price: "3 500 ₽",
+  },
+  {
+    name: "Свадебный",
+    desc: "Нежный, утончённый и стойкий макияж в самый важный день",
+    price: "5 000 ₽",
+    highlight: true,
+  },
+  {
+    name: "Вечерний",
+    desc: "Выразительный образ для особенных событий",
+    price: "3 500 ₽",
+  },
+  {
+    name: "Лифтинг",
+    desc: "Визуальное освежение и мягкий лифтинг лица. Лёгкие текстуры, деликатная коррекция",
+    price: "3 500 ₽",
+  },
+  {
+    name: "Образ для фотосессии",
+    desc: "Макияж + лёгкая укладка",
+    price: "5 000 ₽",
+  },
+  {
+    name: "Выезд к клиенту",
+    desc: "В пределах МКАД",
+    price: "+ 2 000 ₽",
+  },
+];
+
+const portfolioImages = [
+  "https://cdn.poehali.dev/projects/1b096a44-0c81-4524-82a9-090523ac4c74/bucket/e3babe9e-3765-4b04-8e7f-cf89af089222.JPG",
+  "https://cdn.poehali.dev/projects/1b096a44-0c81-4524-82a9-090523ac4c74/bucket/6bd233cf-4646-4f3e-8325-92299487afe1.JPG",
+  "https://cdn.poehali.dev/projects/1b096a44-0c81-4524-82a9-090523ac4c74/bucket/4cd2d055-04b8-42ad-9fbb-f421641e81af.JPG",
+  "https://cdn.poehali.dev/projects/1b096a44-0c81-4524-82a9-090523ac4c74/bucket/ccf64f94-cf4e-439f-b076-9462f639a342.JPG",
+  "https://cdn.poehali.dev/projects/1b096a44-0c81-4524-82a9-090523ac4c74/bucket/85b0535e-ca79-49bd-b958-70ecacfc11f8.png",
+];
 
 const Index = () => {
-  const images = [
-    "/freepik__enhance__98192.png",
-    "/LS.png",
-    "/freepik__a-closeup-shot-features-a-glossy-purple-crossshape__48873.png",
-    "/freepik__the-style-is-3d-model-with-octane-render-volumetri__57555.png",
-    "/eqirGoRIJPaIMgEUeliWpNxeFmI.jpg",
-    "/ultra-detailed_close-up_side_profile_of_a_dark-skinned_model_wearing_futuristic_chrome_wraparound_s_ps17q5ms2ptu5t6bdru6_2.png",
-    "/slide.png",
-    "/freepik__abstract-digital-art-featuring-a-series-of-horizon__489.png",
-    "/abstract-blue-gradient.webp",
-    "/VkvvhXlWo3hEBzcqwTpjd_aa4bf9ee998f4ec0b17a8bf16fe3e9e2.jpg",
-    "/hyperrealistic_commercial_product_photography_of_luxury_chrome_sunglasses_on_male_model_extreme_chi_fanguv2w9zx489lcivwa_2.png",
-  ];
-
   return (
     <main className="relative min-h-screen bg-background">
+      {/* Шапка */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+        <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+          <span className="font-semibold tracking-widest text-sm text-foreground uppercase">
+            Lumière <span className="text-primary">by Alexandra</span>
+          </span>
+          <a
+            href="tel:+79881388714"
+            className="flex items-center gap-2 text-sm text-primary font-medium hover:opacity-80 transition-opacity"
+          >
+            <Icon name="Phone" size={15} />
+            +7 988 138-87-14
+          </a>
+        </div>
+      </header>
+
+      {/* Галерея-дуга hero */}
       <ArcGalleryHero
-        images={images}
+        images={portfolioImages}
         startAngle={20}
         endAngle={160}
-        radiusLg={480}
-        radiusMd={360}
-        radiusSm={260}
-        cardSizeLg={120}
-        cardSizeMd={100}
-        cardSizeSm={80}
-        className="pt-16 pb-16 md:pt-20 md:pb-20 lg:pt-24 lg:pb-24"
+        radiusLg={460}
+        radiusMd={340}
+        radiusSm={240}
+        cardSizeLg={130}
+        cardSizeMd={105}
+        cardSizeSm={82}
+        className="pt-14"
       />
+
+      {/* Hero текст */}
+      <section className="text-center px-4 pb-20 -mt-8">
+        <p className="text-xs tracking-[0.25em] uppercase text-primary font-medium mb-3">
+          Визажист · Москва
+        </p>
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+          Lumière<br />
+          <span className="text-primary">by Alexandra</span>
+        </h1>
+        <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-md mx-auto">
+          Каждый образ — это история. Нежная, выразительная, неповторимая.
+        </p>
+        <a
+          href="tel:+79881388714"
+          className="mt-8 inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-primary text-white font-medium hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform duration-200"
+        >
+          <Icon name="Phone" size={16} />
+          Записаться
+        </a>
+      </section>
+
+      {/* Обо мне */}
+      <section className="max-w-4xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-10">
+        <div className="w-full md:w-2/5 flex-shrink-0">
+          <div className="relative">
+            <div className="absolute inset-0 rounded-3xl bg-primary/10 translate-x-3 translate-y-3" />
+            <img
+              src="https://cdn.poehali.dev/projects/1b096a44-0c81-4524-82a9-090523ac4c74/bucket/85b0535e-ca79-49bd-b958-70ecacfc11f8.png"
+              alt="Александра — визажист"
+              className="relative rounded-3xl w-full object-cover aspect-[3/4] shadow-xl"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <p className="text-xs tracking-[0.2em] uppercase text-primary font-medium mb-3">Обо мне</p>
+          <h2 className="text-3xl font-bold text-foreground mb-4">Александра</h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Профессиональный визажист с опытом создания образов для свадеб, фотосессий и особых событий. Работаю с каждой клиенткой индивидуально — чтобы макияж подчёркивал вашу естественную красоту.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            Использую только проверенные бренды премиум-класса. Выезд в пределах МКАД.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center md:justify-start gap-4">
+            {["Свадебный", "Вечерний", "Лифтинг"].map((tag) => (
+              <span key={tag} className="px-4 py-1.5 rounded-full bg-accent text-accent-foreground text-sm font-medium">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Прайс */}
+      <section className="bg-secondary/40 py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs tracking-[0.2em] uppercase text-primary font-medium text-center mb-2">Стоимость</p>
+          <h2 className="text-3xl font-bold text-foreground text-center mb-10">Прайс-лист</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {services.map((s) => (
+              <div
+                key={s.name}
+                className={`rounded-2xl p-5 flex flex-col gap-2 transition-shadow hover:shadow-md ${
+                  s.highlight
+                    ? "bg-primary text-white shadow-lg"
+                    : "bg-white border border-border"
+                }`}
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className={`font-semibold text-base ${s.highlight ? "text-white" : "text-foreground"}`}>
+                    {s.name}
+                  </h3>
+                  <Icon
+                    name={s.highlight ? "Star" : "Sparkles"}
+                    size={16}
+                    className={s.highlight ? "text-white/70 flex-shrink-0 mt-0.5" : "text-primary flex-shrink-0 mt-0.5"}
+                  />
+                </div>
+                <p className={`text-sm leading-relaxed flex-1 ${s.highlight ? "text-white/80" : "text-muted-foreground"}`}>
+                  {s.desc}
+                </p>
+                <p className={`text-xl font-bold mt-1 ${s.highlight ? "text-white" : "text-primary"}`}>
+                  {s.price}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Портфолио превью */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs tracking-[0.2em] uppercase text-primary font-medium text-center mb-2">Работы</p>
+          <h2 className="text-3xl font-bold text-foreground text-center mb-10">Портфолио</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {portfolioImages.map((src, i) => (
+              <div key={i} className={`overflow-hidden rounded-2xl shadow-md ${i === 0 ? "col-span-2 md:col-span-1 row-span-2" : ""}`}>
+                <img
+                  src={src}
+                  alt={`Работа ${i + 1}`}
+                  loading="lazy"
+                  className="w-full h-full object-cover aspect-square hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Контакты */}
+      <section className="bg-foreground text-background py-16 px-4">
+        <div className="max-w-xl mx-auto text-center">
+          <p className="text-xs tracking-[0.2em] uppercase text-primary font-medium mb-2">Контакты</p>
+          <h2 className="text-3xl font-bold mb-3">Записаться</h2>
+          <p className="text-background/60 mb-8">
+            Свяжитесь со мной — обсудим ваш образ и выберем удобное время
+          </p>
+          <a
+            href="tel:+79881388714"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-semibold text-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform duration-200"
+          >
+            <Icon name="Phone" size={20} />
+            +7 988 138-87-14
+          </a>
+          <p className="mt-4 text-background/40 text-sm">Александра · Москва, в пределах МКАД</p>
+        </div>
+      </section>
+
+      {/* Футер */}
+      <footer className="bg-foreground border-t border-background/10 py-4 text-center">
+        <p className="text-background/30 text-xs">© 2025 Lumière by Alexandra · Визажист в Москве</p>
+      </footer>
     </main>
   );
 };
